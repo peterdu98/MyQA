@@ -1,0 +1,6 @@
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/MyQA.exe
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/MyQA.pdb
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQAGUI.csprojAssemblyReference.cache
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQAGUI.csproj.CoreCompileInputs.cache
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQA.exe
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQA.pdb
