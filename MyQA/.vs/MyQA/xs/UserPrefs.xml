@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{6187145D-21EE-44FE-A73A-493D60540B34}|Default">
+  <MonoDevelop.Ide.ItemProperties.MyQAGUI PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyQA/Program.cs">
+    <Files>
+      <File FileName="MyQA/Program.cs" Line="11" Column="17" />
+      <File FileName="MyQA/MainWindow.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyQA" expanded="True">
+            <Node name="MyQADLL" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="src" selected="True" />
+            </Node>
+            <Node name="MyQAGUI" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.MyQADLL FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
