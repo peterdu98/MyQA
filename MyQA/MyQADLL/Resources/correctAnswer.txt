@@ -1,2 +1,10 @@
 1,TAFE Building
-2,Library
+2,Business and Art
+3,8:30 AM
+4,5 floors
+5,The fifth floor
+6,2
+7,Glenferrie station
+8,3 semesters
+9,GS Building
+10,Library

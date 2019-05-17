@@ -1,3 +1,30 @@
 1,Art Building
 1,Business Building
 1,Design Building
+2,Business Architecture
+2,Business and Aviation
+2,Building of Aviation
+3,9:30
+3,7:30
+3,8:00
+4,6 floors
+4,4 floors
+4,3 floors
+5,The sixth floor
+5,The third floor
+5,The fourth floor
+6,3
+6,4
+6,1
+7,Hawthorn station
+7,Camberwell station
+7,Auburn station
+8,2 semesters
+8,4 semesters
+8,6 semesters
+9,ASGE Building
+9,Library
+9,TAFE Building
+10,TAFE Building
+10,BA Building
+10,AMDC Building
