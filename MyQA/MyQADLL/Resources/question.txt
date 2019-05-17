@@ -1,1 +1,10 @@
 1,What are TA-TB-TC-TD buildings known for?
+2,What is BA Building stand for?
+3,When is the first class of the day started?
+4,How many floors does the library have?
+5,Which is the quite floor in the library?
+6,How many water station do we have on-campus?
+7,What is the nearest train station from Swinburne?
+8,How many semesters does Swinburne offer for the Diploma degree per year?
+9,Where is the reception of Swinburne Student Life?
+10,Where is the reception of studentHQ?
