@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MyQADLL.src
 {
-    public class QAGenerator
+    public class QAGenerator : IHaveGenerator
     {
         //Fields
         private List<Question> _listQuestion;

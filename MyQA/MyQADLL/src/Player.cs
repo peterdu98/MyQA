@@ -21,18 +21,9 @@ namespace MyQADLL.src
         public string TextFile { get => _textFile; set => _textFile = value; }
 
         //Methods
-        public override void SelectChoice(string choice)
+        public void SelectChoice(string choice)
         {
             selectedChoice = choice;
-        }
-
-        public override void CountScore(bool reset)
-        {
-            if (IsCorrect) { score.Increment(); }
-            else { score.Decrease(); }
-
-            if (reset) { score.Reset(); }
-            base.IsCorrect = false;
         }
 
         public void SaveTo()
