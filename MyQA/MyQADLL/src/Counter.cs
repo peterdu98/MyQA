@@ -13,7 +13,7 @@ namespace MyQADLL.src
         }
 
         //Property
-        public int Value { get => _value; }
+        public int Value { get => _value; set => _value = value; }
 
         //Methods
         public void Increment() => _value++;

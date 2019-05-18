@@ -27,7 +27,13 @@ namespace MyQADLL.src
         public bool IsCorrect { get => _isCorrect; set => _isCorrect = value; }
 
         //Methods
-        public abstract void SelectChoice(string choice);
-        public abstract void CountScore(bool reset);
+        public void CountScore(bool reset)
+        {
+            if (IsCorrect) { score.Increment(); }
+            else { score.Decrease(); }
+
+            if (reset) { score.Reset(); }
+            IsCorrect = false;
+        }
     }
 }
