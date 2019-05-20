@@ -16,4 +16,76 @@
       <placeholder />
     </child>
   </widget>
+  <widget class="Gtk.Window" id="MyQA.view.TitleScreen" design-size="800 600">
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Title" translatable="yes">Question and Answer Game</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="background">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <property name="HeightRequest">600</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="playBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">Custom</property>
+          </widget>
+          <packing>
+            <property name="X">350</property>
+            <property name="Y">250</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="historyBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">Custom</property>
+          </widget>
+          <packing>
+            <property name="X">350</property>
+            <property name="Y">320</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="exitBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToExit" />
+          </widget>
+          <packing>
+            <property name="X">350</property>
+            <property name="Y">390</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Image" id="welcome">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">100</property>
+          </widget>
+          <packing>
+            <property name="X">150</property>
+            <property name="Y">130</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>

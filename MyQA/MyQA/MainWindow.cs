@@ -5,7 +5,7 @@ public partial class MainWindow : Gtk.Window
 {
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
-        Build();
+        MyQA.view.TitleScreen titleScreen = new MyQA.view.TitleScreen();
     }
 
     protected void OnDeleteEvent(object sender, DeleteEventArgs a)
