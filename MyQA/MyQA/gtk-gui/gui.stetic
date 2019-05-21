@@ -7,24 +7,25 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/MyQA.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="800 600">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Title" translatable="yes">MyQA game</property>
     <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
       <placeholder />
     </child>
   </widget>
-  <widget class="Gtk.Window" id="MyQA.view.TitleScreen" design-size="800 600">
+  <widget class="Gtk.Bin" id="MyQA.view.OpeningScreen" design-size="800 600">
     <property name="MemberName" />
     <property name="WidthRequest">800</property>
     <property name="HeightRequest">600</property>
-    <property name="Title" translatable="yes">Question and Answer Game</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <property name="Resizable">False</property>
+    <property name="Visible">False</property>
     <child>
-      <widget class="Gtk.Fixed" id="fixed2">
+      <widget class="Gtk.Fixed" id="fixed18">
         <property name="MemberName" />
         <property name="HasWindow">False</property>
         <child>
@@ -35,6 +36,17 @@
           </widget>
         </child>
         <child>
+          <widget class="Gtk.Image" id="welcome">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">100</property>
+          </widget>
+          <packing>
+            <property name="X">150</property>
+            <property name="Y">150</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.Button" id="playBtn">
             <property name="MemberName" />
             <property name="WidthRequest">110</property>
@@ -43,8 +55,8 @@
             <property name="Type">Custom</property>
           </widget>
           <packing>
-            <property name="X">350</property>
-            <property name="Y">250</property>
+            <property name="X">200</property>
+            <property name="Y">380</property>
           </packing>
         </child>
         <child>
@@ -57,7 +69,7 @@
           </widget>
           <packing>
             <property name="X">350</property>
-            <property name="Y">320</property>
+            <property name="Y">380</property>
           </packing>
         </child>
         <child>
@@ -67,22 +79,27 @@
             <property name="HeightRequest">50</property>
             <property name="CanFocus">True</property>
             <property name="Type">Custom</property>
-            <signal name="Clicked" handler="ClickToExit" />
+            <signal name="Clicked" handler="ClickExit" />
           </widget>
           <packing>
-            <property name="X">350</property>
-            <property name="Y">390</property>
+            <property name="X">500</property>
+            <property name="Y">380</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Image" id="welcome">
+          <widget class="Gtk.Entry" id="userName">
             <property name="MemberName" />
-            <property name="WidthRequest">500</property>
-            <property name="HeightRequest">100</property>
+            <property name="WidthRequest">410</property>
+            <property name="HeightRequest">40</property>
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="HasFrame">False</property>
+            <property name="InvisibleChar">●</property>
+            <signal name="Activated" handler="OnUserNameActivated" />
           </widget>
           <packing>
-            <property name="X">150</property>
-            <property name="Y">130</property>
+            <property name="X">200</property>
+            <property name="Y">310</property>
           </packing>
         </child>
       </widget>
