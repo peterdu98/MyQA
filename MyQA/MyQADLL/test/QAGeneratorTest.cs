@@ -7,7 +7,7 @@ namespace MyQADLL.test
     [TestFixture()]
     public class QAGeneratorTest
     {
-        static readonly string questionFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/question.txt";
+        static readonly string questionFile = "../../Resources/question.txt";
 
         [Test()]
         public void QAGeneratorInitTest()
