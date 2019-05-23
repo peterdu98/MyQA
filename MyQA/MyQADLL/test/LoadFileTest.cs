@@ -5,11 +5,11 @@ namespace MyQADLL.test
     [TestFixture()]
     public class LoadFileTest
     {
-        static readonly string answerFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/correctAnswer.txt";
-        static readonly string choiceFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/answer.txt";
-        static readonly string questionFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/question.txt";
-        static readonly string playerFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/player.txt";
-        static readonly string playerFileTest = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/test/player-test.txt";
+        static readonly string answerFile = "../../Resources/correctAnswer.txt";
+        static readonly string choiceFile = "../../Resources/answer.txt";
+        static readonly string questionFile = "../../Resources/question.txt";
+        static readonly string playerFile = "../../Resources/player.txt";
+        static readonly string playerFileTest = "../../Resources/test/player-test.txt";
 
         [Test()]
         public void TestFileExists()

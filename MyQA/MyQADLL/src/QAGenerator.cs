@@ -9,7 +9,7 @@ namespace MyQADLL.src
     {
         //Fields
         private List<Question> _listQuestion;
-        static readonly string textFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/question.txt";
+        static readonly string textFile = "../../Resources/question.txt";
 
         //Constructors
         public QAGenerator()

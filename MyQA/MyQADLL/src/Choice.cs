@@ -10,7 +10,7 @@ namespace MyQADLL.src
         //Fields
         private String _actualAnswer;
         private List<string> _listChoice;
-        static readonly string textFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/answer.txt";
+        static readonly string textFile = "../../Resources/answer.txt";
 
         //Constructor
         public Choice(int id) : base(id)
