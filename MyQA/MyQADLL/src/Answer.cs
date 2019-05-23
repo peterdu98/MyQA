@@ -9,7 +9,7 @@ namespace MyQADLL.src
         //Fields
         private string _answer;
         private int _fetchID;
-        static readonly string textFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/correctAnswer.txt";
+        static readonly string textFile = "../../Resources/correctAnswer.txt";
         
         //Constructor
         public Answer(int id)

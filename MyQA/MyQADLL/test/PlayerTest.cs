@@ -7,7 +7,7 @@ namespace MyQADLL.test
     [TestFixture()]
     public class PlayerTest
     {
-        static readonly string textFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/test/player-test.txt";
+        static readonly string textFile = "../../Resources/test/player-test.txt";
 
         [Test()]
         public void TestInitPlayer()

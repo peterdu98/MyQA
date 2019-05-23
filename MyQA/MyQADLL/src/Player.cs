@@ -8,7 +8,7 @@ namespace MyQADLL.src
     {
         //Fields
         private string _name;
-        private string _textFile = "/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQADLL/Resources/player.txt";
+        private string _textFile = "../../Resources/player.txt";
         
         //Constructor
         public Player(QAGenerator generator, string name) : base (generator) 
