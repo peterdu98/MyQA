@@ -1,5 +1,6 @@
 ﻿using System;
 using Gtk;
+using System.Text.RegularExpressions;
 
 namespace MyQA.view
 {
@@ -12,18 +13,28 @@ namespace MyQA.view
         private Gdk.Pixbuf _historybtn;
         private Gdk.Pixbuf _exitbtn;
         private Gdk.Pixbuf _welcome;
+        private bool _isPlay;
+        private bool _isHistory;
 
         //Constructor
         public OpeningScreen()
         {
+            _isPlay = true;
+            _isHistory = false;
             this.Build();
             LoadImageFromFile();
             LoadImageToScreen();
             CustomUserInput();
+            errorMsg.SetSizeRequest(0, 0);
+            ShowAll();
         }
 
+        //Property
+        public bool IsPlay { get => _isPlay; }
+        public bool IsHistory { get => _isHistory; }
+
         //Methods
-        public void LoadImageFromFile()
+        private void LoadImageFromFile()
         {
             try
             {
@@ -39,7 +50,7 @@ namespace MyQA.view
                 Environment.Exit(1);
             }
         }
-        public void LoadImageToScreen()
+        private void LoadImageToScreen()
         {
             //Load image
             background.Pixbuf = _background;
@@ -54,11 +65,21 @@ namespace MyQA.view
             playBtn.Image = play_btn_img;
             historyBtn.Image = history_btn_img;
             exitBtn.Image = exit_btn_img;
-
         }
-        public void CustomUserInput()
+        private void CustomUserInput()
         {
             userName.ModifyFont(Pango.FontDescription.FromString("Arial 30"));
+        }
+        private void CustomErrorMsg()
+        {
+            if (!_isPlay) {
+                errorMsg.SetSizeRequest(410, 30);
+                errorMsg.ModifyBase(StateType.Normal, new Gdk.Color(255, 77, 77));
+                errorMsg.ModifyCursor(new Gdk.Color(255, 77, 77), new Gdk.Color(255, 77, 77));
+                errorMsg.ModifyFont(Pango.FontDescription.FromString("Arial 10"));
+            } else {
+                errorMsg.Destroy();
+            }
         }
 
         //Actions
@@ -67,9 +88,28 @@ namespace MyQA.view
             Application.Quit();
         }
 
-        protected void OnUserNameActivated(object sender, EventArgs e)
+        protected void ClickToPlay(object sender, EventArgs e)
         {
-            userName.Text = "Hello " + userName.Text;
+            Regex regex = new Regex(@"^\d");
+            if(regex.IsMatch(userName.Text) || userName.Text.Contains(",") || userName.Text == "")
+            {
+                if (regex.IsMatch(userName.Text)) {
+                    errorMsg.Text = "Your name MUST not start with numbers";
+                } else if (userName.Text.Contains(",")) {
+                    errorMsg.Text = "Your name MUST not contain , (commas)";
+                } else {
+                    errorMsg.Text = "Your name MUST not be empty";
+                }
+                _isPlay = false;
+            } else {
+                _isPlay = true;
+            }
+            CustomErrorMsg();
+        }
+
+        protected void ClickToHistory(object sender, EventArgs e)
+        {
+            _isHistory = true;
         }
     }
 }

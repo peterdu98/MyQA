@@ -18,6 +18,8 @@ namespace MyQA.view
 
 		private global::Gtk.Entry userName;
 
+		private global::Gtk.Entry errorMsg;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -88,14 +90,28 @@ namespace MyQA.view
 			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed18[this.userName]));
 			w6.X = 200;
 			w6.Y = 310;
+			// Container child fixed18.Gtk.Fixed+FixedChild
+			this.errorMsg = new global::Gtk.Entry();
+			this.errorMsg.WidthRequest = 410;
+			this.errorMsg.HeightRequest = 30;
+			this.errorMsg.Name = "errorMsg";
+			this.errorMsg.IsEditable = false;
+			this.errorMsg.HasFrame = false;
+			this.errorMsg.InvisibleChar = '●';
+			this.errorMsg.Xalign = 0.5F;
+			this.fixed18.Add(this.errorMsg);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed18[this.errorMsg]));
+			w7.X = 200;
+			w7.Y = 275;
 			this.Add(this.fixed18);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
 			this.Hide();
+			this.playBtn.Clicked += new global::System.EventHandler(this.ClickToPlay);
+			this.historyBtn.Clicked += new global::System.EventHandler(this.ClickToHistory);
 			this.exitBtn.Clicked += new global::System.EventHandler(this.ClickExit);
-			this.userName.Activated += new global::System.EventHandler(this.OnUserNameActivated);
 		}
 	}
 }

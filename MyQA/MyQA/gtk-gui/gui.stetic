@@ -53,6 +53,7 @@
             <property name="HeightRequest">50</property>
             <property name="CanFocus">True</property>
             <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToPlay" />
           </widget>
           <packing>
             <property name="X">200</property>
@@ -66,6 +67,7 @@
             <property name="HeightRequest">50</property>
             <property name="CanFocus">True</property>
             <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToHistory" />
           </widget>
           <packing>
             <property name="X">350</property>
@@ -95,11 +97,55 @@
             <property name="IsEditable">True</property>
             <property name="HasFrame">False</property>
             <property name="InvisibleChar">●</property>
-            <signal name="Activated" handler="OnUserNameActivated" />
           </widget>
           <packing>
             <property name="X">200</property>
             <property name="Y">310</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="errorMsg">
+            <property name="MemberName" />
+            <property name="WidthRequest">410</property>
+            <property name="HeightRequest">30</property>
+            <property name="IsEditable">False</property>
+            <property name="HasFrame">False</property>
+            <property name="InvisibleChar">●</property>
+            <property name="Xalign">0.5</property>
+          </widget>
+          <packing>
+            <property name="X">200</property>
+            <property name="Y">275</property>
           </packing>
         </child>
       </widget>
