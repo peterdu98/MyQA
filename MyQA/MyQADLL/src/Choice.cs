@@ -10,7 +10,6 @@ namespace MyQADLL.src
         //Fields
         private String _actualAnswer;
         private List<string> _listChoice;
-        static readonly string textFile = "../../Resources/answer.txt";
 
         //Constructor
         public Choice(int id) : base(id)
@@ -21,14 +20,14 @@ namespace MyQADLL.src
 
         //Property
         public List<string> ListChoice { get => _listChoice; }
-
+       
         //Method
-        public void LoadChoice()
+        public void LoadChoice(string path)
         {
             //Load the file and then update _listChoice based on id
-            if (File.Exists(textFile))
+            if (File.Exists(path))
             {
-                string[] lines = File.ReadAllLines(textFile);
+                string[] lines = File.ReadAllLines(path);
 
                 foreach (string line in lines)
                 {
