@@ -53,6 +53,7 @@
             <property name="HeightRequest">50</property>
             <property name="CanFocus">True</property>
             <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToPlay" />
           </widget>
           <packing>
             <property name="X">200</property>
@@ -66,6 +67,7 @@
             <property name="HeightRequest">50</property>
             <property name="CanFocus">True</property>
             <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToHistory" />
           </widget>
           <packing>
             <property name="X">350</property>
@@ -95,11 +97,99 @@
             <property name="IsEditable">True</property>
             <property name="HasFrame">False</property>
             <property name="InvisibleChar">●</property>
-            <signal name="Activated" handler="OnUserNameActivated" />
           </widget>
           <packing>
             <property name="X">200</property>
             <property name="Y">310</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="errorMsg">
+            <property name="MemberName" />
+            <property name="WidthRequest">410</property>
+            <property name="HeightRequest">30</property>
+            <property name="IsEditable">False</property>
+            <property name="HasFrame">False</property>
+            <property name="InvisibleChar">●</property>
+            <property name="Xalign">0.5</property>
+          </widget>
+          <packing>
+            <property name="X">200</property>
+            <property name="Y">275</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="MyQA.view.HistoryScreen" design-size="800 600">
+    <action-group name="Default">
+      <action id="KAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">K</property>
+        <property name="ShortLabel" translatable="yes">K</property>
+      </action>
+      <action id="kAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">k</property>
+        <property name="ShortLabel" translatable="yes">k</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="background">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <property name="HeightRequest">600</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="backBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToBack" />
+          </widget>
+          <packing>
+            <property name="X">350</property>
+            <property name="Y">450</property>
           </packing>
         </child>
       </widget>
