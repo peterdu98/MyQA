@@ -8,6 +8,16 @@ namespace MyQA.view
 
 		private global::Gtk.Image background;
 
+		private global::Gtk.TextView questionText;
+
+		private global::Gtk.Button choice1;
+
+		private global::Gtk.Button choice2;
+
+		private global::Gtk.Button choice3;
+
+		private global::Gtk.Button choice4;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -26,12 +36,80 @@ namespace MyQA.view
 			this.background.HeightRequest = 600;
 			this.background.Name = "background";
 			this.fixed3.Add(this.background);
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.questionText = new global::Gtk.TextView();
+			this.questionText.WidthRequest = 700;
+			this.questionText.HeightRequest = 50;
+			this.questionText.CanFocus = true;
+			this.questionText.Name = "questionText";
+			this.questionText.Editable = false;
+			this.questionText.CursorVisible = false;
+			this.questionText.AcceptsTab = false;
+			this.questionText.Justification = ((global::Gtk.Justification)(2));
+			this.questionText.WrapMode = ((global::Gtk.WrapMode)(2));
+			this.questionText.PixelsAboveLines = 15;
+			this.fixed3.Add(this.questionText);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.questionText]));
+			w2.X = 50;
+			w2.Y = 250;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.choice1 = new global::Gtk.Button();
+			this.choice1.WidthRequest = 330;
+			this.choice1.HeightRequest = 75;
+			this.choice1.CanFocus = true;
+			this.choice1.Name = "choice1";
+			this.choice1.UseUnderline = true;
+			this.choice1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.choice1);
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.choice1]));
+			w3.X = 50;
+			w3.Y = 320;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.choice2 = new global::Gtk.Button();
+			this.choice2.WidthRequest = 330;
+			this.choice2.HeightRequest = 75;
+			this.choice2.CanFocus = true;
+			this.choice2.Name = "choice2";
+			this.choice2.UseUnderline = true;
+			this.choice2.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.choice2);
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.choice2]));
+			w4.X = 420;
+			w4.Y = 320;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.choice3 = new global::Gtk.Button();
+			this.choice3.WidthRequest = 330;
+			this.choice3.HeightRequest = 75;
+			this.choice3.CanFocus = true;
+			this.choice3.Name = "choice3";
+			this.choice3.UseUnderline = true;
+			this.choice3.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.choice3);
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.choice3]));
+			w5.X = 50;
+			w5.Y = 420;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.choice4 = new global::Gtk.Button();
+			this.choice4.WidthRequest = 330;
+			this.choice4.HeightRequest = 75;
+			this.choice4.CanFocus = true;
+			this.choice4.Name = "choice4";
+			this.choice4.UseUnderline = true;
+			this.choice4.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.choice4);
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.choice4]));
+			w6.X = 420;
+			w6.Y = 420;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
 				this.Child.ShowAll();
 			}
 			this.Hide();
+			this.choice1.Clicked += new global::System.EventHandler(this.ClickToChoice1);
+			this.choice2.Clicked += new global::System.EventHandler(this.ClickToChoice2);
+			this.choice3.Clicked += new global::System.EventHandler(this.ClickToChoice3);
+			this.choice4.Clicked += new global::System.EventHandler(this.ClickToChoice4);
 		}
 	}
 }
