@@ -17,11 +17,16 @@ namespace MyQADLL.src
             _fetchID = id;
             LoadAnswer();
         }
+        public Answer(int id, string path)
+        {
+            _textFile = path;
+            _fetchID = id;
+            LoadAnswer();
+        }
 
         //Properties
         protected string Answ { get => _answer; }
         protected int FetchID { get => _fetchID; set => _fetchID = value; }
-        public string TextFile { get => _textFile; set => _textFile = value; }
 
         //Methods
         private void LoadAnswer()
