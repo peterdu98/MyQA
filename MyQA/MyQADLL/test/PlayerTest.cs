@@ -134,6 +134,7 @@ namespace MyQADLL.test
             generator.LoadQuestion();
 
             Player p = new Player(generator, "Bean");
+            p.TextFile = textFile;
 
             string actualResult = p.ReadScoreFromFile();
             string expectedResult = "Hello Bean! You look like new here.";

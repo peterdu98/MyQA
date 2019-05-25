@@ -11,7 +11,7 @@ public partial class MainWindow
 		this.HeightRequest = 600;
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString("MyQA game");
-		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 		this.Resizable = false;
 		if ((this.Child != null))
 		{
