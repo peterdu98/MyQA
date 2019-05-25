@@ -24,10 +24,10 @@ namespace MyQADLL.src
         public List<string> Choice { get => _choice; }
 
         //Methods
-        public void FindChoice(string path)
+        public void FindChoice(string choicePath, string answerPath)
         {
-            Choice choice = new Choice(QuestID);
-            choice.LoadChoice(path);
+            Choice choice = new Choice(QuestID, answerPath);
+            choice.LoadChoice(choicePath);
             _choice = choice.ListChoice;
         }
     }

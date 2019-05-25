@@ -7,7 +7,8 @@ namespace MyQADLL.test
     [TestFixture()]
     public class QuestionTest
     {
-        static readonly string path = "../../Resources/answer.txt";
+        static readonly string choicePath = "../../Resources/answer.txt";
+        static readonly string answerPath = "../../Resources/correctAnswer.txt";
 
         [Test()]
         public void TestInitQuestion()
@@ -28,7 +29,7 @@ namespace MyQADLL.test
             Question q = new Question(1, "What are TA-TB-TC-TD buildings known for?");
             bool actualResult = true;
 
-            q.FindChoice(path);
+            q.FindChoice(choicePath, answerPath);
 
             if(q.Choice == null) { actualResult = false; }
             if (q.Choice.Count != 4) { actualResult = false; }

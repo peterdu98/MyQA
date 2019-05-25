@@ -11,6 +11,7 @@ namespace MyQADLL.src
         private List<Question> _listQuestion;
         private string _textFile = "../../Resources/question.txt";
         private string _textFileOfChoice = "../../Resources/answer.txt";
+        private string _textFileOfAnswer = "../../Resources/correctAnswer.txt";
 
         //Constructors
         public QAGenerator()
@@ -22,6 +23,7 @@ namespace MyQADLL.src
         public List<Question> ListQuestion { get => _listQuestion; }
         public string TextFile { get => _textFile; set => _textFile = value; }
         public string TextFileOfChoice { get => _textFileOfChoice; set => _textFileOfChoice = value; }
+        public string TextFileOfAnswer { get => _textFileOfAnswer; set => _textFileOfAnswer = value; }
 
         //Methods
         public void LoadQuestion()
@@ -35,7 +37,7 @@ namespace MyQADLL.src
                 {
                     string[] l = line.Split(new char[] { ',' });
                     Question q = new Question(Convert.ToInt32(l[0]), l[1]);
-                    q.FindChoice(_textFileOfChoice);
+                    q.FindChoice(_textFileOfChoice, _textFileOfAnswer);
                     _listQuestion.Add(q);
                 }
             }
@@ -54,7 +56,7 @@ namespace MyQADLL.src
 
         public Boolean CheckAnswer(int answerID, string choice)
         {
-            Answer answer = new Answer(answerID);
+            Answer answer = new Answer(answerID, _textFileOfAnswer);
             return answer.Check(choice);
         }
     }

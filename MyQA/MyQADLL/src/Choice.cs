@@ -17,6 +17,11 @@ namespace MyQADLL.src
             _actualAnswer = base.Answ;
             _listChoice = new List<string>();
         }
+        public Choice(int id, string path) : base(id, path)
+        {
+            _actualAnswer = base.Answ;
+            _listChoice = new List<string>();
+        }
 
         //Property
         public List<string> ListChoice { get => _listChoice; }
