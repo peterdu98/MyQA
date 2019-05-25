@@ -151,4 +151,48 @@
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Bin" id="MyQA.view.HistoryScreen" design-size="800 600">
+    <action-group name="Default">
+      <action id="KAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">K</property>
+        <property name="ShortLabel" translatable="yes">K</property>
+      </action>
+      <action id="kAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">k</property>
+        <property name="ShortLabel" translatable="yes">k</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed2">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="background">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <property name="HeightRequest">600</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="backBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToBack" />
+          </widget>
+          <packing>
+            <property name="X">350</property>
+            <property name="Y">450</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>
