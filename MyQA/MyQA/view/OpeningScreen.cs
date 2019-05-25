@@ -14,16 +14,15 @@ namespace MyQA.view
         private Gdk.Pixbuf _exitbtn;
         private Gdk.Pixbuf _welcome;
         private bool _isPlay;
+        private string _userName;
         public event EventHandler ClickHistory;
         public event EventHandler ClickPlay;
-
-        //Property
-        public string UserName { get => userName.Text; }
 
         //Constructor
         public OpeningScreen()
         {
             _isPlay = true;
+            _userName = null;
             this.Build();
             LoadImageFromFile();
             LoadImageToScreen();
@@ -31,6 +30,9 @@ namespace MyQA.view
             errorMsg.SetSizeRequest(0, 0);
             ShowAll();
         }
+
+        //Property
+        public string UserName { get => _userName; }
 
         //Methods
         private void LoadImageFromFile()
@@ -102,6 +104,7 @@ namespace MyQA.view
                 _isPlay = false;
             } else {
                 _isPlay = true;
+                _userName = userName.Text;
             }
             CustomErrorMsg();
             ClickPlay(this, e);
