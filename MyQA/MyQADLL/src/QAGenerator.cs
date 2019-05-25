@@ -9,7 +9,8 @@ namespace MyQADLL.src
     {
         //Fields
         private List<Question> _listQuestion;
-        static readonly string textFile = "../../Resources/question.txt";
+        private string _textFile = "../../Resources/question.txt";
+        private string _textFileOfChoice = "../../Resources/answer.txt";
 
         //Constructors
         public QAGenerator()
@@ -19,20 +20,22 @@ namespace MyQADLL.src
 
         //Properties
         public List<Question> ListQuestion { get => _listQuestion; }
+        public string TextFile { get => _textFile; set => _textFile = value; }
+        public string TextFileOfChoice { get => _textFileOfChoice; set => _textFileOfChoice = value; }
 
         //Methods
         public void LoadQuestion()
         {
             //Load the file and then update _answer based on FetchID
-            if (File.Exists(textFile))
+            if (File.Exists(_textFile))
             {
-                string[] lines = File.ReadAllLines(textFile);
+                string[] lines = File.ReadAllLines(_textFile);
 
                 foreach (string line in lines)
                 {
                     string[] l = line.Split(new char[] { ',' });
                     Question q = new Question(Convert.ToInt32(l[0]), l[1]);
-                    q.FindChoice();
+                    q.FindChoice(_textFileOfChoice);
                     _listQuestion.Add(q);
                 }
             }

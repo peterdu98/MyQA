@@ -7,12 +7,14 @@ namespace MyQADLL.test
     [TestFixture()]
     public class ChoiceTest
     {
+        static readonly string path = "../../Resources/answer.txt";
+
         [Test()]
         public void TestLoadChoice()
         {
             //Load choice for question 1;
             Choice choice = new Choice(1);
-            choice.LoadChoice();
+            choice.LoadChoice(path);
             int actualResult = choice.ListChoice.Count;
             Assert.AreEqual(4, actualResult);
         }
@@ -25,7 +27,7 @@ namespace MyQADLL.test
             Answer answer = new Answer(1);
             bool actualResult = false;
 
-            choice.LoadChoice();
+            choice.LoadChoice(path);
 
             foreach(string item in choice.ListChoice) {
                 actualResult = answer.Check(item);
@@ -43,7 +45,7 @@ namespace MyQADLL.test
             Answer answer = new Answer(1);
             bool actualResult = false;
 
-            choice.LoadChoice();
+            choice.LoadChoice(path);
 
             foreach (string item in choice.ListChoice)
             {

@@ -9,7 +9,7 @@ namespace MyQADLL.src
         //Fields
         private string _answer;
         private int _fetchID;
-        static readonly string textFile = "../../Resources/correctAnswer.txt";
+        private string _textFile = "../../Resources/correctAnswer.txt";
         
         //Constructor
         public Answer(int id)
@@ -21,14 +21,15 @@ namespace MyQADLL.src
         //Properties
         protected string Answ { get => _answer; }
         protected int FetchID { get => _fetchID; set => _fetchID = value; }
+        public string TextFile { get => _textFile; set => _textFile = value; }
 
         //Methods
         private void LoadAnswer()
         {
             //Load the file and then update _answer based on FetchID
-            if (File.Exists(textFile))
+            if (File.Exists(_textFile))
             {
-                string[] lines = File.ReadAllLines(textFile);
+                string[] lines = File.ReadAllLines(_textFile);
 
                 foreach (string line in lines)
                 {

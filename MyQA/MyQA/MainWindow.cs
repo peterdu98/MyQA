@@ -18,6 +18,8 @@ public partial class MainWindow : Gtk.Window
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         _generator = new QAGenerator();
+        _generator.TextFile = "../../../MyQADLL/Resources/question.txt";
+        _generator.TextFileOfChoice = "../../../MyQADLL/Resources/answer.txt";
         _generator.LoadQuestion();
         _generator.SelectQuestion();
 
@@ -55,19 +57,29 @@ public partial class MainWindow : Gtk.Window
             _levelScreen.ClickHard += (sender, e) => HardBot();
         }
     }
-    private void EasyBot() {
+    private void EasyBot() 
+    {
         _bot = new Bot(_generator, BotLevel.Easy);
+        _bot.Load();
+        Console.WriteLine(_bot.Neurons.Count);
         AddQuestionScreen();
     }
-    private void MediumBot() {
+    private void MediumBot() 
+    {
         _bot = new Bot(_generator, BotLevel.Medium);
+        _bot.Load();
+        Console.WriteLine(_bot.Neurons.Count);
         AddQuestionScreen();
     }
-    private void HardBot() {
+    private void HardBot() 
+    {
         _bot = new Bot(_generator, BotLevel.Hard);
+        _bot.Load();
+        Console.WriteLine(_bot.Neurons.Count);
         AddQuestionScreen();
     }
-    private void AddQuestionScreen() {
+    private void AddQuestionScreen() 
+    {
         _questionScreen = new MyQA.view.QuestionScreen();
         Remove(_levelScreen);
         Add(_questionScreen);

@@ -23,7 +23,6 @@ namespace MyQA.view
         {
             p.TextFile = "../../../MyQADLL/Resources/player.txt";
             _greet = p.ReadScoreFromFile();
-            time = 0;
 
             this.Build();
 
