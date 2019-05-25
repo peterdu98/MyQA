@@ -358,4 +358,90 @@
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Bin" id="MyQA.view.ResultScreen" design-size="800 600">
+    <property name="MemberName" />
+    <property name="WidthRequest">800</property>
+    <property name="HeightRequest">600</property>
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed4">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="background">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <property name="HeightRequest">600</property>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="playAgainBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToPlayAgain" />
+          </widget>
+          <packing>
+            <property name="X">250</property>
+            <property name="Y">350</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="quitBtn">
+            <property name="MemberName" />
+            <property name="WidthRequest">110</property>
+            <property name="HeightRequest">50</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">Custom</property>
+            <signal name="Clicked" handler="ClickToExit" />
+          </widget>
+          <packing>
+            <property name="X">400</property>
+            <property name="Y">350</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="gameoverLabel">
+            <property name="MemberName" />
+            <property name="WidthRequest">700</property>
+            <property name="HeightRequest">50</property>
+            <property name="LabelProp" translatable="yes">label33</property>
+            <property name="Justify">Center</property>
+          </widget>
+          <packing>
+            <property name="X">50</property>
+            <property name="Y">150</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="playerScore">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">50</property>
+            <property name="LabelProp" translatable="yes">label34</property>
+            <property name="Justify">Center</property>
+          </widget>
+          <packing>
+            <property name="X">150</property>
+            <property name="Y">210</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="botScore">
+            <property name="MemberName" />
+            <property name="WidthRequest">500</property>
+            <property name="HeightRequest">50</property>
+            <property name="LabelProp" translatable="yes">label35</property>
+            <property name="Justify">Center</property>
+          </widget>
+          <packing>
+            <property name="X">150</property>
+            <property name="Y">260</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>
