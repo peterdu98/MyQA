@@ -16,6 +16,7 @@ public partial class MainWindow : Gtk.Window
     private MyQA.view.HistoryScreen _historyScreen;
     private MyQA.view.LevelScreen _levelScreen;
     private List<MyQA.view.QuestionScreen> _questionScreen;
+    private MyQA.view.ResultScreen _resultScreen;
 
     //Constrtuctor
     public MainWindow() : base(Gtk.WindowType.Toplevel)
@@ -70,6 +71,10 @@ public partial class MainWindow : Gtk.Window
     {
         _bot = new Bot(_generator, mode);
         _bot.Load();
+        foreach (Neuron n in _bot.Neurons)
+        {
+            Console.WriteLine(n.Score);
+        }
         Remove(_levelScreen);
         AddQuestionScreen();
     }
@@ -110,12 +115,35 @@ public partial class MainWindow : Gtk.Window
     }
     private void ClickChoice()
     {
-        _p.SelectChoice(_questionScreen[_questNo].SelectedChoice);
-        _p.CountScore(false);
-        _questNo++;
-        _time.Value = 0;
-        Remove(_questionScreen[_questNo - 1]);
-        Add(_questionScreen[_questNo]);
+        if (_questNo == 4)
+        {
+            string text = "Let's play again for the tie-break!";
+            if (_p.Score < _bot.Score) { text = "I see your potential! Let's try again!"; }
+            if (_p.Score > _bot.Score) { text = "Congratulation, {0}! You defeated the bot! Let's try another level!"; }
+            _resultScreen = new MyQA.view.ResultScreen(text, new string[] { _p.Score.ToString(), _bot.Score.ToString() });
+            Remove(_questionScreen[_questNo]);
+            Add(_resultScreen);
+            _resultScreen.ClickPlayAgain += (sender, e) => PlayAgainScreen();
+        } else {
+            //Save choice to Player
+            _p.SelectChoice(_questionScreen[_questNo].SelectedChoice);
+            _p.IsCorrect = _generator.CheckAnswer(_generator.ListQuestion[_questNo].QuestID, _p.SelectedChoice);
+            _p.CountScore(false);
+
+            //Continue on processing question
+            _questNo++;
+            _time.Value = 0;
+            Remove(_questionScreen[_questNo - 1]);
+            Add(_questionScreen[_questNo]);
+        }
+    }
+    private void PlayAgainScreen()
+    {
+        _p.CountScore(true);
+        _questNo = 0;
+        LoadFromMyQADLL();
+        Remove(_resultScreen);
+        Add(_levelScreen);
     }
 
     //Actions
