@@ -39,7 +39,7 @@ namespace MyQADLL.test
             bool actutalOutputIndex0 = true;
             string actutalOutputIndex1 = "";
 
-            neuron.Run();
+            neuron.Run(generator);
 
             //Check choices in Question and Selected choice
             for(int i = 0; i < 5; i++)

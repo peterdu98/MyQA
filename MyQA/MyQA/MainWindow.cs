@@ -12,6 +12,7 @@ public partial class MainWindow : Gtk.Window
     private Bot _bot;
     private Counter _time;
     private int _questNo;
+    private uint _idTimer;
     private MyQA.view.OpeningScreen _titleScreen;
     private MyQA.view.HistoryScreen _historyScreen;
     private MyQA.view.LevelScreen _levelScreen;
@@ -58,9 +59,12 @@ public partial class MainWindow : Gtk.Window
     {
         if (_titleScreen.UserName != null)
         {
+            if (_p == null) {
+                Remove(_titleScreen);
+            }
             _p = new Player(_generator, _titleScreen.UserName);
+
             _levelScreen = new MyQA.view.LevelScreen(_p);
-            Remove(_titleScreen);
             Add(_levelScreen);
             _levelScreen.ClickEasy += (sender, e) => ConstructBot(BotLevel.Easy);
             _levelScreen.ClickMedium += (sender, e) => ConstructBot(BotLevel.Medium);
@@ -71,10 +75,6 @@ public partial class MainWindow : Gtk.Window
     {
         _bot = new Bot(_generator, mode);
         _bot.Load();
-        foreach (Neuron n in _bot.Neurons)
-        {
-            Console.WriteLine(n.Score);
-        }
         Remove(_levelScreen);
         AddQuestionScreen();
     }
@@ -87,11 +87,10 @@ public partial class MainWindow : Gtk.Window
             _questionScreen[i].ClickChoice3 += (sender, e) => ClickChoice();
             _questionScreen[i].ClickChoice4 += (sender, e) => ClickChoice();
         }
-
         Add(_questionScreen[_questNo]);
 
         if(_questNo < 5){
-            GLib.Timeout.Add(1000, new GLib.TimeoutHandler(UpdateTime));
+            _idTimer = GLib.Timeout.Add(1000, new GLib.TimeoutHandler(UpdateTime));
         }
     }
     private bool UpdateTime()
@@ -115,35 +114,36 @@ public partial class MainWindow : Gtk.Window
     }
     private void ClickChoice()
     {
-        if (_questNo == 4)
-        {
+        //Save choice to Player
+        _p.SelectChoice(_questionScreen[_questNo].SelectedChoice);
+        _p.IsCorrect = _generator.CheckAnswer(_generator.ListQuestion[_questNo].QuestID, _p.SelectedChoice);
+        _p.CountScore(false);
+
+        //Continue on processing question
+        _questNo++;
+        _time.Value = 0;
+        Remove(_questionScreen[_questNo - 1]);
+        if(_questNo < 5) {
+            Add(_questionScreen[_questNo]);
+        } else {
+            GLib.Source.Remove(_idTimer);
             string text = "Let's play again for the tie-break!";
             if (_p.Score < _bot.Score) { text = "I see your potential! Let's try again!"; }
-            if (_p.Score > _bot.Score) { text = "Congratulation, {0}! You defeated the bot! Let's try another level!"; }
+            if (_p.Score > _bot.Score) { text = String.Format("Congratulation, {0}! You defeated the bot! Let's try another level!", _p.Name); }
             _resultScreen = new MyQA.view.ResultScreen(text, new string[] { _p.Score.ToString(), _bot.Score.ToString() });
-            Remove(_questionScreen[_questNo]);
             Add(_resultScreen);
             _resultScreen.ClickPlayAgain += (sender, e) => PlayAgainScreen();
-        } else {
-            //Save choice to Player
-            _p.SelectChoice(_questionScreen[_questNo].SelectedChoice);
-            _p.IsCorrect = _generator.CheckAnswer(_generator.ListQuestion[_questNo].QuestID, _p.SelectedChoice);
-            _p.CountScore(false);
-
-            //Continue on processing question
-            _questNo++;
-            _time.Value = 0;
-            Remove(_questionScreen[_questNo - 1]);
-            Add(_questionScreen[_questNo]);
         }
     }
     private void PlayAgainScreen()
     {
+        _p.SaveTo();
         _p.CountScore(true);
         _questNo = 0;
+        _questionScreen = new List<MyQA.view.QuestionScreen>();
         LoadFromMyQADLL();
         Remove(_resultScreen);
-        Add(_levelScreen);
+        AddLevelScreen();
     }
 
     //Actions
