@@ -4,9 +4,9 @@
 2,Business Architecture
 2,Business and Aviation
 2,Building of Aviation
-3,9:30
-3,7:30
-3,8:00
+3,9:30 AM
+3,7:30 AM
+3,8:00 AM
 4,6 floors
 4,4 floors
 4,3 floors

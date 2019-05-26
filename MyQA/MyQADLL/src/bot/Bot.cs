@@ -8,12 +8,14 @@ namespace MyQADLL.src
         //Fields
         private List<Neuron> _neurons;
         private BotLevel _mode;
+        private IHaveGenerator _generator;
 
         //Constructor
         public Bot(QAGenerator generator, BotLevel mode) : base(generator)
         {
             _mode = mode;
             _neurons = new List<Neuron>();
+            _generator = generator;
         }
 
         //Properties
@@ -59,7 +61,7 @@ namespace MyQADLL.src
             {
                 string text = "";
                 Neuron neuron = new Neuron(ListQuestion);
-                neuron.Run();
+                neuron.Run(_generator);
 
                 //Processing encoded output into a string (e.g "ABCD")
                 foreach(string[] choice in neuron.OutPut) {

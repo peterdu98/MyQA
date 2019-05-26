@@ -26,10 +26,9 @@ namespace MyQADLL.src
         public int Score { get => _score; }
 
         //Methods
-        public void Run()
+        public void Run(IHaveGenerator generator)
         {
             //choice index 1 is the encoded output
-            IHaveGenerator generator = new QAGenerator();
             Random random = new Random();
             string[] encodingOption = "A B C D".Split();
 

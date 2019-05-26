@@ -1,0 +1,12 @@
+Peter,5
+Bean,4
+Andrew,4
+Adam,4
+NeNe,3
+Mountain,3
+Jinx,3
+Mito,2
+Kaka,2
+Mist,2
+Miku,5
+NaNa,5
