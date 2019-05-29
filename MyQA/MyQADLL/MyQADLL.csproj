@@ -35,6 +35,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Answer.cs" />
+    <Compile Include="src\Choice.cs" />
+    <Compile Include="src\Counter.cs" />
+    <Compile Include="src\GameSource.cs" />
+    <Compile Include="src\IHaveGenerator.cs" />
+    <Compile Include="src\Player.cs" />
+    <Compile Include="src\QAGenerator.cs" />
+    <Compile Include="src\Question.cs" />
+    <Compile Include="src\bot\Bot.cs" />
+    <Compile Include="src\bot\BotLevel.cs" />
+    <Compile Include="src\bot\Neuron.cs" />
+    <Compile Include="test\AnswerTest.cs" />
+    <Compile Include="test\BotTest.cs" />
+    <Compile Include="test\ChoiceTest.cs" />
+    <Compile Include="test\CounterTest.cs" />
+    <Compile Include="test\LoadFileTest.cs" />
+    <Compile Include="test\NeuronTest.cs" />
+    <Compile Include="test\PlayerTest.cs" />
+    <Compile Include="test\QAGeneratorTest.cs" />
+    <Compile Include="test\QuestionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />

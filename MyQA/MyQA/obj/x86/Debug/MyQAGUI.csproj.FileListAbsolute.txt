@@ -4,3 +4,9 @@
 /Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQAGUI.csproj.CoreCompileInputs.cache
 /Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQA.exe
 /Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQA.pdb
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/MyQADLL.dll
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/nunit.framework.dll
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/MyQADLL.pdb
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/nunit.framework.pdb
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/bin/Debug/nunit.framework.xml
+/Users/peterdu/Projects/C#/QACustomProgram/MyQA/MyQA/obj/x86/Debug/MyQAGUI.csproj.CopyComplete

@@ -59,12 +59,25 @@
     <Compile Include="gtk-gui\MainWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="gtk-gui\MyQA.view.OpeningScreen.cs" />
+    <Compile Include="gtk-gui\MyQA.view.HistoryScreen.cs" />
+    <Compile Include="gtk-gui\MyQA.view.LevelScreen.cs" />
+    <Compile Include="gtk-gui\MyQA.view.QuestionScreen.cs" />
+    <Compile Include="gtk-gui\MyQA.view.ResultScreen.cs" />
+    <Compile Include="view\HistoryScreen.cs" />
+    <Compile Include="view\LevelScreen.cs" />
+    <Compile Include="view\OpeningScreen.cs" />
+    <Compile Include="view\QuestionScreen.cs" />
+    <Compile Include="view\ResultScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyQADLL\MyQADLL.csproj">
       <Project>{B622B913-91B0-4713-B571-EC184EF6EC20}</Project>
       <Name>MyQADLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="view\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
