@@ -16,7 +16,7 @@ The MyQA game is the **Question and Answer game** which can be used in many purp
 ## 3. Description:
 This game is the **Question and Answer game**, so it genrates the list of 5 questions - each question has 4 choices which are arranged in the random order. The topic of the question can be schooling, computer science, machine learning, etc.
 
-To play the game, the player firstly has to enter his/her name and then choose the mode of the bot s/he wants to compete with. There are 3 modes, including easy, medium and hard. In the end of the game, the score of the player will be showed on the screen and that is used for comparing to the score of the bot. In addition, the player is able to play again or exit after s/he has been finished the match.
+To play the game, the player firstly has to enter his/her name and then choose the mode of the bot s/he wants to compete with. There are 3 modes, including easy, medium and hard. In the end of the game, the score of the player will be showed on the screen and that is used for comparing to the score of the bot. In addition, the player is able to play again or exit after s/he has finished the match.
 
 The bot is being contructed after the player select the mode of the bot. It has **number of neurons which depends on the selected mode**. For example, if that is the easy mode, the bot will be constructed with 10% of the total number of neurons. Each neuron has the information of 5 questions. For each question, **the neuron selects randomly the choice and then computes the score for that based on the correction**. After every neuron is computed, **the bot will select the neuron which has the highest score** and that is the final score of it.
 
