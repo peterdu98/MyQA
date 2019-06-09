@@ -6,7 +6,7 @@ Programming language:
 * **C#.Net Framework v4.7.0**
 * **Gtk-Sharp v2.4.0**
 
-Unit testing framwork: **NUnit**
+Unit testing framework: **NUnit**
 
 IDE: **Visual Studio 2019**
 
