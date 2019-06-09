@@ -11,7 +11,7 @@ Unit testing framework: **NUnit**
 IDE: **Visual Studio 2019**
 
 ## 2. Motivation:
-The MyQA game is the **Question and Answer game** which can be used in many purposes. For example, Swinburne students can use it for measuring how ell they understand their university. Another useful purpose is that parents are able to know how well they understand their children. In regard to technical motivation, I would like to apply **object oriented principles**, which I learned from the university, and the **basic concept of neural network**, which I self-taught, into a question and answer game.
+The MyQA game is the **Question and Answer game** which can be used in many purposes. For example, Swinburne students can use it for measuring how well they understand their university. Another useful purpose is that parents are able to know how well they understand their children. In regard to technical motivation, I would like to apply **object oriented principles**, which I learned from the university, and the **basic concept of neural network**, which I self-taught, into a question and answer game.
 
 ## 3. Description:
 This game is the **Question and Answer game**, so it genrates the list of 5 questions - each question has 4 choices which are arranged in the random order. The topic of the question can be schooling, computer science, machine learning, etc.
